@@ -1,0 +1,7 @@
+spark-assembly-1.6.0-hadoop2.6.0.jar
+spark-examples-1.6.0-hadoop2.6.0.jar
+jackson-databind-2.6.5.jar
+guava-21.0.jar
+log4j.jar
+
+导包的之后要调整为上面的顺序
