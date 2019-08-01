@@ -19,6 +19,8 @@ public class CrateDFFByMysql {
     public static void main(String[] args) {
 
         SparkConf conf = new SparkConf().setAppName("json").setMaster("local");
+        conf.set("spark.sql.shuffle.partitons","1" ); //默认分区数是200所以测试会很慢
+
         JavaSparkContext sc = new JavaSparkContext(conf);
         SQLContext sqlContext = new SQLContext(sc);
 
@@ -43,7 +45,7 @@ public class CrateDFFByMysql {
         DataFrame sql = sqlContext.sql("select * from user");
         sql.show();
 
-        //将数据保存到mysql的表中
+        //将数据保存到mysql的表中，如果表没有的话会自动帮你创建
         /*Properties properties = new Properties();
         properties.setProperty("user", "root");
         properties.setProperty("password", "root");

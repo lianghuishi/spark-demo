@@ -31,7 +31,7 @@ public class CrateDFFByDongtai {
         JavaRDD<String> lineRDD = sc.textFile("./person");
 
         JavaRDD<Row> rowRDD = lineRDD.map(new Function<String, Row>() {
-            private static final long serialVersionUID = 909546969170010532L;
+            private static final long serialVersionUID = -7540687090770058758L;
             @Override
             public Row call(String line) throws Exception {
                 String[] split = line.split(",");
