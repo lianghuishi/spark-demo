@@ -36,7 +36,7 @@ public class UDF {
                 return  s.length();
             }
         }, DataTypes.IntegerType);
-        sqlContext.sql("select * from user").show();;
+        sqlContext.sql("select * from user").show();
         sqlContext.sql("select name , Strlen(name) as ll from user").show();
 
     }
