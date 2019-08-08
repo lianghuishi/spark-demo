@@ -44,12 +44,6 @@ public class SparkStreamingOnHDFS {
 		 */
 		System.out.println("create new context****************************");
 		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-
 
 		/**
 		 * checkpoint保存：
@@ -116,7 +110,6 @@ public class SparkStreamingOnHDFS {
 		wordsCount.print();
 
 		return jsc;
-
 
 	}
 }

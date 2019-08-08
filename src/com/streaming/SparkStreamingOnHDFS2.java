@@ -16,7 +16,7 @@ import java.util.*;
 /**
  *  Driver的HA 在提交application的时候 添加 --supervise 选项 如果Driver挂掉 会自动启动一个Driver
  *  但是如何保证让新的driver知道之前宕掉的driver处理的任务进度以及在kafka的消费偏移量等等呢？
- *   就需要利用checkpont 恢复程序 （JavaStreamingContext.getOrCreate(checkpointDir, factory);）
+ *  就需要利用checkpont 恢复程序 （JavaStreamingContext.getOrCreate(checkpointDir, factory);）
  *
  *	利用checkpont 恢复程序在上次消费kafka的偏移量
  *  利用	 updateStateByKey 做累计计算
@@ -40,18 +40,11 @@ public class SparkStreamingOnHDFS2 {
 
 
 	private static JavaStreamingContext createContex(String checkpointDir,SparkConf conf1){
-
 		/**
 		 * 只会在第一次运行时候打印，之后都是直接从checponit恢复spark程序
 		 */
 		System.out.println("create new context****************************");
 		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-		System.out.println("create new context****************************");
-
 
 		/**
 		 * checkpoint保存：

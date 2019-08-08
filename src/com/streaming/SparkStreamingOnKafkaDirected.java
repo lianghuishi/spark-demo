@@ -22,8 +22,6 @@ import java.util.*;
  * 1、linesDStram里面封装到的是RDD， RDD里面有partition与读取topic的parititon数是一致的。
  * 2、从kafka中读来的数据封装一个DStram里面，可以对这个DStream重分区 reaprtitions(numpartition)
  * 
- * @author root
- *
  */
 public class SparkStreamingOnKafkaDirected {
 
@@ -58,8 +56,7 @@ public class SparkStreamingOnKafkaDirected {
 				return new Tuple2<>(word, 1);
 			}
 		});
-		
-		
+
 		/*JavaPairDStream<String, Integer> wordsCount = pairs.reduceByKey(new Function2<Integer, Integer, Integer>() { //对相同的Key，进行Value的累计（包括Local和Reducer级别同时Reduce）
 			private static final long serialVersionUID = 1L;
 			public Integer call(Integer v1, Integer v2) throws Exception {
